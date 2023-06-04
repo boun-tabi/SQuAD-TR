@@ -1,15 +1,102 @@
-# 📜 SQuAD-TR
-SQuAD-TR is the Turkish translation of [SQuAD2.0](https://rajpurkar.github.io/SQuAD-explorer/) using [Amazon Translate](https://aws.amazon.com/translate/).  It is currently in progress.  In the meantime, you may use the following draft version in your research.  We would appreciate very much to hear your feedbacks while we are improving it currently.
+## 📜 SQuAD-TR
 
-- [SQuAD-TR v0.1-draft](https://drive.google.com/drive/folders/10QovcLZgE1uAlXniTXkvMZ_qI-EofE9O?usp=sharing)
+SQuAD-TR is a machine translated version of the original [SQuAD2.0](https://rajpurkar.github.io/SQuAD-explorer/) dataset into Turkish, using [Amazon Translate](https://aws.amazon.com/translate/).
+
+### Dataset Description
+
+- **Paper:** Building Efficient and Effective OpenQA Systems for Low-Resource Languages
+- **Point of Contact:** [Emrah Budur](mailto:emrah.budur@boun.edu.tr)
 
 
- #### 🏷 SQuAD-TR License
- 
-SQuAD-TR is licensed under the same terms as [SQuAD 2.0](https://rajpurkar.github.io/SQuAD-explorer/) which is [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/legalcode "Creative Commons Attribution-ShareAlike 4.0 International License").
+## Dataset Structure
 
- #### ✍️ Authors
- - TBD
+### Data Instances
+
+Our data instances follow that of the original SQuAD2.0 dataset.
+Shared below is an example instance from the default train dataset.
+
+```
+{
+    "id": "56be85543aeaaa14008c9063",
+    "title": "Beyonce",
+    "context": "Beyoncé Giselle Knowles-Carter (d. 4 Eylül 1981), ABD'li şarkıcı, söz yazarı, prodüktör ve aktris. Houston, Teksas'ta doğup büyüdü, çocukken çeşitli şarkı ve dans yarışmalarında sahne aldı ve 1990'ların sonlarında R&B kız grubu Destiny's Child'ın solisti olarak ün kazandı. Babası Mathew Knowles tarafından yönetilen grup tüm zamanların en çok satan kız gruplarından biri oldu. Beyoncé'nin ilk albümü Dangerously in Love'ın (2003) yayınlanmasını izlemiştir ve beş Grammy Ödülü kazanmış ve Billboard Hot 100 bir numaralı single'ları “Crazy in Love” ve “Baby Boy\"un yer aldığı Beyoncé'nin ilk albümü Dangerously in Love (2003) yayınlandı.",
+    "question": "Beyonce ne zaman popüler olmaya başladı?",
+    "answers": [
+      {
+        "text": "1990'ların sonlarında",
+        "answer_start": 192
+      }
+    ]
+}
+
+```
+Notes:
+- The training split we get by `openqa` parameter will not include `answer_start` field as it is not required for the training phase of the OpenQA formulation.
+- The split we get by `excluded` parameter is also missing `answer_start` field as we could not identify the starting index of the answers for these examples from the context after the translation.
+
+### Data Fields
+
+The data fields with `*` prefix are the same for all splits. The splits we get by `openqa` and `excluded` parameters are missing `answer_start` field. 
+
+- `*id`: a string feature.
+- `*title`: a string feature.
+- `*context`: a string feature.
+- `*question`: a string feature.
+- `*answers`: a dictionary feature containing:
+  - `*text`: a string feature.
+  - `answer_start`: a int32 feature.
+
+### Data Splits
+
+The SQuAD2.0 TR dataset has 2 splits: _train_ and _validation_. Below are the statistics for the most recent version of the dataset in the default configuration.
+
+| Split      | Articles | Paragraphs | Answerable Questions | Unanswerable Questions | Total   |
+| ---------- | -------- | ---------- | -------------------- | ---------------------- | ------- |
+| train      | 442      | 18776      | 61293                | 43498                  | 104,791 |
+| validation | 35       | 1204       | 2346                 | 5945                   | 8291    |
+
+
+
+## Dataset Creation
+
+We translated the titles, context paragraphs, questions and answer spans from the original SQuAD2.0 dataset using [Amazon Translate](https://aws.amazon.com/translate/) - requiring us to remap the starting positions of the answer spans, since their positions were changed due to the automatic translation.
+We performed an automatic post-processing step to populate the start positions for the answer spans.
+To do so, we have first looked at whether there was an exact match for the translated answer span in the translated context paragraph and if so, we kept the answer text along with this start position found.
+If no exact match was found, we looked for approximate matches using a character-level edit distance algorithm.
+We have excluded the question-answer pairs from the original dataset where neither an exact nor an approximate match was found in the translated version.
+Our "default" configuration corresponds to this version.
+We have put the "excluded" examples in our "excluded" configuration.
+As a result, the datasets in these two configurations are mutually exclusive.
+
+| Split   | Articles | Paragraphs | Questions wo/ answers | Total   |
+| ------- | -------- | ---------- | --------------------- | ------- |
+| train   | ?        | ?          | 25528                 | 25528   |
+| dev     | ?        | ?          | ?                     | ?       |
+
+
+In addition to the default configuration, we also include a different view of train split specifically for openqa setting by combining the `train` and `train-excluded` splits. In this setting, we only provide question-answer pairs along with their contexts.  
+
+| Split      | Articles | Paragraphs | Questions w/ answers |  Total   |
+| ---------- | -------- | ---------- | -------------------- |  ------- |
+| openqa     | 442      | 18776      | 86821                |  86821   |
+
+
+
+More information on our translation strategy can be found in our linked paper.
+
+### Source Data
+
+This dataset used the original SQuAD2.0 dataset as its source data.
+
+### 🏷 Licensing Information
+
+The SQuAD-TR is released under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) in accordance with the license of SQuAD-2.0. 
+
+### ✍️ Citation
+
+```
+@article{[TBD]}
+```
  
 ## ❤ Acknowledgment
 This research was supported by the _[AWS Cloud Credits for Research Program](https://aws.amazon.com/government-education/research-and-technical-computing/cloud-credit-for-research/) (formerly AWS Research Grants)_.
