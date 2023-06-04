@@ -125,3 +125,5 @@ You can find all code, models and samples of the input data here [link TBD].  Pl
  
 ## ❤ Acknowledgment
 This research was supported by the _[AWS Cloud Credits for Research Program](https://aws.amazon.com/government-education/research-and-technical-computing/cloud-credit-for-research/) (formerly AWS Research Grants)_.
+
+We thank Alara Dirik, Almira Bağlar, Berfu Büyüköz, Berna Erden, Gökçe Uludoğan,  Havva Yüksel, Melih Barsbey, Murat Karademir, Selen Parlar, Tuğçe Ulutuğ, Utku Yavuz for their support on our application for AWS Cloud Credits for Research Program and Fatih Mehmet Güler for the valuable advice, discussion and insightful comments.
