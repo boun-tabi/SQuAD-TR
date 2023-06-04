@@ -1,6 +1,6 @@
 ## 📜 SQuAD-TR
 
-SQuAD-TR is a machine translated version of the original [SQuAD2.0](https://rajpurkar.github.io/SQuAD-explorer/) dataset into Turkish, using [Amazon Translate](https://aws.amazon.com/translate/).
+SQuAD-TR is a machine translated version of the original [SQuAD2.0](https://rajpurkar.github.io/SQuAD-explorer/) dataset into Turkish using [Amazon Translate](https://aws.amazon.com/translate/).
 
 ### Dataset Description
 
@@ -60,9 +60,10 @@ The SQuAD2.0 TR dataset has 2 splits: _train_ and _validation_. Below are the st
 ## Dataset Creation
 
 We translated the titles, context paragraphs, questions and answer spans from the original SQuAD2.0 dataset using [Amazon Translate](https://aws.amazon.com/translate/) - requiring us to remap the starting positions of the answer spans, since their positions were changed due to the automatic translation.
-We performed an automatic post-processing step to populate the start positions for the answer spans.
-To do so, we have first looked at whether there was an exact match for the translated answer span in the translated context paragraph and if so, we kept the answer text along with this start position found.
+
+We performed an automatic post-processing step to populate the start positions for the answer spans. To do so, we have first looked at whether there was an exact match for the translated answer span in the translated context paragraph and if so, we kept the answer text along with this start position found.
 If no exact match was found, we looked for approximate matches using a character-level edit distance algorithm.
+
 We have excluded the question-answer pairs from the original dataset where neither an exact nor an approximate match was found in the translated version.
 Our "default" configuration corresponds to this version.
 We have put the "excluded" examples in our "excluded" configuration.
@@ -70,8 +71,8 @@ As a result, the datasets in these two configurations are mutually exclusive.
 
 | Split   | Articles | Paragraphs | Questions wo/ answers | Total   |
 | ------- | -------- | ---------- | --------------------- | ------- |
-| train   | ?        | ?          | 25528                 | 25528   |
-| dev     | ?        | ?          | ?                     | ?       |
+| train-excluded   | 440        | 13490          | 25528                 | 25528   |
+| dev-excluded     | 35        | 924          | 3582                     | 3582       |
 
 
 In addition to the default configuration, we also include a different view of train split specifically for openqa setting by combining the `train` and `train-excluded` splits. In this setting, we only provide question-answer pairs along with their contexts.  
@@ -91,6 +92,30 @@ This dataset used the original SQuAD2.0 dataset as its source data.
 ### 🏷 Licensing Information
 
 The SQuAD-TR is released under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) in accordance with the license of SQuAD-2.0. 
+
+## 📚 Resources 
+
+### 📖 Download SQuAD-TR
+
+#### 🔗 Raw files
+
+* All files can be downloaded from the `data` folder of the repository.
+
+#### 🤗 HuggingFace datasets
+```py
+from datasets import load_dataset
+
+squad_tr_standard_qa = load_dataset("[TBD]", "default")
+squad_tr_open_qa = load_dataset("[TBD]", "openqa")
+squad_tr_excluded = load_dataset("[TBD]", "excluded")
+
+```
+* Demo application 👉 [Link TBD]. 
+
+### 🔬 Reproducibility 
+
+You can find all code, models and samples of the input data [link TBD].  Please feel free to reach out to us if you have any specific questions. 
+
 
 ### ✍️ Citation
 
