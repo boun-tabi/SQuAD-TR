@@ -15,6 +15,28 @@ SQuAD-TR is a machine translated version of the original [SQuAD2.0](https://rajp
 Our data instances follow that of the original SQuAD2.0 dataset.
 Shared below is an example instance from the default train dataset🍫
 
+Example from SQuAD2.0:
+```
+{
+    "context": "Chocolate is New York City's leading specialty-food export, with up to US$234 million worth of exports each year. Entrepreneurs were forming a \"Chocolate District\" in Brooklyn as of 2014, while Godiva, one of the world's largest chocolatiers, continues to be headquartered in Manhattan.",
+  "qas": [
+    {
+     "id": "56cff221234ae51400d9c140",
+      "question": "Which one of the world's largest chocolate makers is stationed in Manhattan?",
+      "is_impossible": false,
+      "answers": [
+        {
+          "text": "Godiva",
+          "answer_start": 194
+        }
+      ],
+    }
+  ]
+}
+```
+
+Turkish translation:
+
 ```
 {
     "context": "Çikolata, her yıl 234 milyon ABD dolarına varan ihracatı ile New York'un önde gelen özel gıda ihracatıdır. Girişimciler 2014 yılı itibariyle Brooklyn'de bir “Çikolata Bölgesi” kurarken, dünyanın en büyük çikolatacılarından biri olan Godiva merkezi Manhattan'da olmaya devam ediyor.",
@@ -34,21 +56,6 @@ Shared below is an example instance from the default train dataset🍫
 }
 
 ```
-Notes:
-- The training split we get by `openqa` parameter will not include `answer_start` field as it is not required for the training phase of the OpenQA formulation.
-- The split we get by `excluded` parameter is also missing `answer_start` field as we could not identify the starting index of the answers for these examples from the context after the translation.
-
-### Data Fields
-
-The data fields with `*` prefix are the same for all splits. The splits we get by `openqa` and `excluded` parameters are missing `answer_start` field. 
-
-- `*id`: a string feature.
-- `*title`: a string feature.
-- `*context`: a string feature.
-- `*question`: a string feature.
-- `*answers`: a dictionary feature containing:
-  - `*text`: a string feature.
-  - `answer_start`: a int32 feature.
 
 ### Data Splits
 
@@ -68,9 +75,10 @@ We translated the titles, context paragraphs, questions and answer spans from th
 We performed an automatic post-processing step to populate the start positions for the answer spans. To do so, we have first looked at whether there was an exact match for the translated answer span in the translated context paragraph and if so, we kept the answer text along with this start position found.
 If no exact match was found, we looked for approximate matches using a character-level edit distance algorithm.
 
-We have excluded the question-answer pairs from the original dataset where neither an exact nor an approximate match was found in the translated version.
-Our "default" configuration corresponds to this version.
-We have put the "excluded" examples in our "excluded" configuration.
+We have excluded the question-answer pairs from the original dataset where neither an exact nor an approximate match was found in the translated version. Our "default" configuration corresponds to this version. 
+
+We have put the "excluded" examples in our "excluded" configuration. 
+
 As a result, the datasets in these two configurations are mutually exclusive.
 
 | Split   | Articles | Paragraphs | Questions wo/ answers | Total   |
@@ -79,13 +87,11 @@ As a result, the datasets in these two configurations are mutually exclusive.
 | dev-excluded     | 35        | 924          | 3582                     | 3582       |
 
 
-In addition to the default configuration, we also include a different view of train split specifically for openqa setting by combining the `train` and `train-excluded` splits. In this setting, we only provide question-answer pairs along with their contexts.  
+In addition to the default configuration, we also a different view of train split can be obtained specifically for openqa setting by combining the `train` and `train-excluded` splits. In this setting, we only have question-answer pairs (without `answer_start` field) along with their contexts.  
 
 | Split      | Articles | Paragraphs | Questions w/ answers |  Total   |
 | ---------- | -------- | ---------- | -------------------- |  ------- |
 | openqa     | 442      | 18776      | 86821                |  86821   |
-
-
 
 More information on our translation strategy can be found in our linked paper.
 
