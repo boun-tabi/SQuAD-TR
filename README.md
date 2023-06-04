@@ -4,7 +4,7 @@ SQuAD-TR is a machine translated version of the original [SQuAD2.0](https://rajp
 
 ### Dataset Description
 
-- **Paper:** Building Efficient and Effective OpenQA Systems for Low-Resource Languages
+- **Paper:** Building Efficient and Effective OpenQA Systems for Low-Resource Languages [Link TBD]
 - **Point of Contact:** [Emrah Budur](mailto:emrah.budur@boun.edu.tr)
 
 
