@@ -75,9 +75,9 @@ We translated the titles, context paragraphs, questions and answer spans from th
 We performed an automatic post-processing step to populate the start positions for the answer spans. To do so, we have first looked at whether there was an exact match for the translated answer span in the translated context paragraph and if so, we kept the answer text along with this start position found.
 If no exact match was found, we looked for approximate matches using a character-level edit distance algorithm.
 
-We have excluded the question-answer pairs from the original dataset where neither an exact nor an approximate match was found in the translated version. Our "default" configuration corresponds to this version. 
+We have excluded the question-answer pairs from the original dataset where neither an exact nor an approximate match was found in the translated version. Our `default` configuration corresponds to this version. 
 
-We have put the "excluded" examples in our "excluded" configuration. 
+We have put the excluded examples in our `excluded` configuration. 
 
 As a result, the datasets in these two configurations are mutually exclusive.
 
