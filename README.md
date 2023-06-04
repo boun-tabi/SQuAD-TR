@@ -17,19 +17,20 @@ Shared below is an example instance from the default train dataset.
 
 ```
 {
-          "context": "Çikolata, her yıl 234 milyon ABD dolarına varan ihracatı ile New York'un önde gelen özel gıda ihracatıdır. Girişimciler 2014 yılı itibariyle Brooklyn'de bir “Çikolata Bölgesi” kurarken, dünyanın en büyük çikolatacılarından biri olan Godiva merkezi Manhattan'da olmaya devam ediyor.",
-          "qas": [            {
-              "id": "56cff221234ae51400d9c140",
-              "question": "Dünyanın en büyük çikolata üreticilerinden hangisi Manhattan'da konuşlandırılmış?",
-              "is_impossible": false,
-              "answers": [
+    "context": "Çikolata, her yıl 234 milyon ABD dolarına varan ihracatı ile New York'un önde gelen özel gıda ihracatıdır. Girişimciler 2014 yılı itibariyle Brooklyn'de bir “Çikolata Bölgesi” kurarken, dünyanın en büyük çikolatacılarından biri olan Godiva merkezi Manhattan'da olmaya devam ediyor.",
+    "qas": [
+        {
+            "id": "56cff221234ae51400d9c140",
+            "question": "Dünyanın en büyük çikolata üreticilerinden hangisi Manhattan'da konuşlandırılmış?",
+            "is_impossible": false,
+            "answers": [
                 {
-                  "text": "Godiva",
-                  "answer_start": 233
+                    "text": "Godiva",
+                    "answer_start": 233
                 }
-              ]
-            }
-          ]
+            ]
+        }
+    ]
 }
 
 ```
