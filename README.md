@@ -114,7 +114,7 @@ squad_tr_excluded = load_dataset("[TBD]", "excluded")
 
 ### 🔬 Reproducibility 
 
-You can find all code, models and samples of the input data [link TBD].  Please feel free to reach out to us if you have any specific questions. 
+You can find all code, models and samples of the input data here [link TBD].  Please feel free to reach out to us if you have any specific questions. 
 
 
 ### ✍️ Citation
