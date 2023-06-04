@@ -99,7 +99,7 @@ More information on our translation strategy can be found in our linked paper.
 
 This dataset used the original SQuAD2.0 dataset as its source data.
 
-### 🏷 Licensing Information
+### Licensing Information
 
 The SQuAD-TR is released under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) in accordance with the license of SQuAD-2.0. 
 
