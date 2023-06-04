@@ -13,7 +13,7 @@ SQuAD-TR is a machine translated version of the original [SQuAD2.0](https://rajp
 ### Data Instances
 
 Our data instances follow that of the original SQuAD2.0 dataset.
-Shared below is an example instance from the default train dataset.
+Shared below is an example instance from the default train dataset🍫
 
 ```
 {
