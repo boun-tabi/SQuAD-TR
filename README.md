@@ -99,8 +99,9 @@ The SQuAD-TR is released under [CC BY-SA 4.0](https://creativecommons.org/licens
 
 #### 🔗 Raw files
 
-* All files can be downloaded from the `data` folder of the repository.
-
+* All SQuAD-TR files can be downloaded from the `data` folder of this repository.
+* XQuAD-TR file can be downloaded [here](https://github.com/deepmind/xquad).
+ 
 #### 🤗 HuggingFace datasets
 ```py
 from datasets import load_dataset
@@ -108,6 +109,7 @@ from datasets import load_dataset
 squad_tr_standard_qa = load_dataset("[TBD]", "default")
 squad_tr_open_qa = load_dataset("[TBD]", "openqa")
 squad_tr_excluded = load_dataset("[TBD]", "excluded")
+xquad_tr = load_dataset("xquad", "xquad.tr") # External resource
 
 ```
 * Demo application 👉 [Link TBD]. 
