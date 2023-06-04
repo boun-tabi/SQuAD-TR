@@ -57,17 +57,6 @@ Turkish translation:
 
 ```
 
-### Data Splits
-
-The SQuAD2.0 TR dataset has 2 splits: _train_ and _validation_. Below are the statistics for the most recent version of the dataset in the default configuration.
-
-| Split      | Articles | Paragraphs | Answerable Questions | Unanswerable Questions | Total   |
-| ---------- | -------- | ---------- | -------------------- | ---------------------- | ------- |
-| train      | 442      | 18776      | 61293                | 43498                  | 104,791 |
-| validation | 35       | 1204       | 2346                 | 5945                   | 8291    |
-
-
-
 ## Dataset Creation
 
 We translated the titles, context paragraphs, questions and answer spans from the original SQuAD2.0 dataset using [Amazon Translate](https://aws.amazon.com/translate/) - requiring us to remap the starting positions of the answer spans, since their positions were changed due to the automatic translation.
@@ -79,7 +68,18 @@ We have excluded the question-answer pairs from the original dataset where neith
 
 We have put the excluded examples in our `excluded` configuration. 
 
-As a result, the datasets in these two configurations are mutually exclusive.
+As a result, the datasets in these two configurations are mutually exclusive.  Below are the details for the corresponding dataset splits.
+
+### Data Splits
+
+The SQuAD2.0 TR dataset has 2 splits: _train_ and _validation_. Below are the statistics for the most recent version of the dataset in the default configuration.
+
+| Split      | Articles | Paragraphs | Answerable Questions | Unanswerable Questions | Total   |
+| ---------- | -------- | ---------- | -------------------- | ---------------------- | ------- |
+| train      | 442      | 18776      | 61293                | 43498                  | 104,791 |
+| validation | 35       | 1204       | 2346                 | 5945                   | 8291    |
+
+
 
 | Split   | Articles | Paragraphs | Questions wo/ answers | Total   |
 | ------- | -------- | ---------- | --------------------- | ------- |
@@ -87,7 +87,7 @@ As a result, the datasets in these two configurations are mutually exclusive.
 | dev-excluded     | 35        | 924          | 3582                     | 3582       |
 
 
-In addition to the default configuration, we also a different view of train split can be obtained specifically for openqa setting by combining the `train` and `train-excluded` splits. In this setting, we only have question-answer pairs (without `answer_start` field) along with their contexts.  
+In addition to the default configuration, we also a different view of train split can be obtained specifically for openqa setting by combining the `train` and `train-excluded` splits. In this view, we only have question-answer pairs (without `answer_start` field) along with their contexts.  
 
 | Split      | Articles | Paragraphs | Questions w/ answers |  Total   |
 | ---------- | -------- | ---------- | -------------------- |  ------- |
