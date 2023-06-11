@@ -116,17 +116,17 @@ The SQuAD-TR is released under [CC BY-SA 4.0](https://creativecommons.org/licens
 ```py
 from datasets import load_dataset
 
-squad_tr_standard_qa = load_dataset("[TBD]", "default")
-squad_tr_open_qa = load_dataset("[TBD]", "openqa")
-squad_tr_excluded = load_dataset("[TBD]", "excluded")
+squad_tr_standard_qa = load_dataset("boun-tabi/squad_tr", "default")
+squad_tr_open_qa = load_dataset("boun-tabi/squad_tr", "openqa")
+squad_tr_excluded = load_dataset("boun-tabi/squad_tr", "excluded")
 xquad_tr = load_dataset("xquad", "xquad.tr") # External resource
 
 ```
-* Demo application 👉 [Link TBD]. 
+* Demo application 👉 [Google Colab](https://colab.research.google.com/drive/1QVD0c1kFfOUc1sRGKDHWeF_HgNEineRt?usp=sharing). 
 
 ### 🔬 Reproducibility 
 
-You can find all code, models and samples of the input data here [link TBD].  Please feel free to reach out to us if you have any specific questions. 
+You can find all code, models and samples of the input data [here](https://drive.google.com/drive/folders/1Y3q1qvzpOSg3PWO18VQ0arp1hB-xcU1F?usp=sharing).  Please feel free to reach out to us if you have any specific questions. 
 
 
 ### ✍️ Citation
