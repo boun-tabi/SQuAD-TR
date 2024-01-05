@@ -13,7 +13,7 @@ SQuAD-TR is a machine translated version of the original [SQuAD2.0](https://rajp
 ### Data Instances
 
 Our data instances follow that of the original SQuAD2.0 dataset.
-Shared below is an example instance from the default train dataset🍫
+Shared below is an example instance🍫 from the default train dataset.
 
 Example from SQuAD2.0:
 ```
@@ -131,9 +131,20 @@ You can find all code, models and samples of the input data [here](https://drive
 
 ### ✍️ Citation
 
+>[Emrah Budur](https://scholar.google.com/citations?user=zSNd03UAAAAJ), [Rıza Özçelik](https://www.cmpe.boun.edu.tr/~riza.ozcelik), [Dilara Soylu](https://scholar.google.com/citations?user=_NC2jJEAAAAJ), [Omar Khattab](https://omarkhattab.com), [Tunga Güngör](https://www.cmpe.boun.edu.tr/~gungort/)  and [Christopher Potts](https://web.stanford.edu/~cgpotts).  
+Building Efficient and Effective OpenQA Systems for Low-Resource Languages. 2024.
+
 ```
-@article{[TBD]}
+@misc{budur-etal-2024-squad-tr,
+      title={Building Efficient and Effective OpenQA Systems for Low-Resource Languages}, 
+      author={Emrah Budur and R{\i}za \"{O}z\c{c}elik and Dilara Soylu and Omar Khattab and Tunga G\"{u}ng\"{o}r and Christopher Potts},
+      year={2024},
+      eprint={TBD},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
 ```
+
  
 ## ❤ Acknowledgment
 This research was supported by the _[AWS Cloud Credits for Research Program](https://aws.amazon.com/government-education/research-and-technical-computing/cloud-credit-for-research/) (formerly AWS Research Grants)_.
