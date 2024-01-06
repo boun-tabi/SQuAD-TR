@@ -101,7 +101,7 @@ This dataset used the original SQuAD2.0 dataset as its source data.
 
 ### Licensing Information
 
-The SQuAD-TR is released under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) in accordance with the license of SQuAD-2.0. 
+The SQuAD-TR is released under [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0). 
 
 ## 📚 Resources 
 
