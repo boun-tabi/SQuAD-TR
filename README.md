@@ -4,7 +4,7 @@ SQuAD-TR is a machine translated version of the original [SQuAD2.0](https://rajp
 
 ### Dataset Description
 
-- **Paper:** Building Efficient and Effective OpenQA Systems for Low-Resource Languages [Link TBD]
+- **Paper:** Building Efficient and Effective OpenQA Systems for Low-Resource Languages [[pdf](https://arxiv.org/abs/2401.03590)].
 - **Point of Contact:** [Emrah Budur](mailto:emrah.budur@boun.edu.tr)
 
 
@@ -131,15 +131,17 @@ You can find all code, models and samples of the input data [here](https://drive
 
 ### ✍️ Citation
 
->[Emrah Budur](https://scholar.google.com/citations?user=zSNd03UAAAAJ), [Rıza Özçelik](https://www.cmpe.boun.edu.tr/~riza.ozcelik), [Dilara Soylu](https://scholar.google.com/citations?user=_NC2jJEAAAAJ), [Omar Khattab](https://omarkhattab.com), [Tunga Güngör](https://www.cmpe.boun.edu.tr/~gungort/)  and [Christopher Potts](https://web.stanford.edu/~cgpotts).  
-Building Efficient and Effective OpenQA Systems for Low-Resource Languages. 2024.
+>[Emrah Budur](https://scholar.google.com/citations?user=zSNd03UAAAAJ), [Rıza Özçelik](https://rizaozcelik.github.io), [Dilara Soylu](https://scholar.google.com/citations?user=_NC2jJEAAAAJ), [Omar Khattab](https://omarkhattab.com), [Tunga Güngör](https://www.cmpe.boun.edu.tr/~gungort/)  and [Christopher Potts](https://web.stanford.edu/~cgpotts).  
+Building Efficient and Effective OpenQA Systems for Low-Resource Languages. 2024. [[pdf]](https://arxiv.org/abs/2401.03590)
 
 ```
 @misc{budur-etal-2024-squad-tr,
       title={Building Efficient and Effective OpenQA Systems for Low-Resource Languages}, 
-      author={Emrah Budur and R{\i}za \"{O}z\c{c}elik and Dilara Soylu and Omar Khattab and Tunga G\"{u}ng\"{o}r and Christopher Potts},
+      author={Emrah Budur and R{\i}za \"{O}z\c{c}elik and
+              Dilara Soylu and Omar Khattab and
+              Tunga G\"{u}ng\"{o}r and Christopher Potts},
       year={2024},
-      eprint={TBD},
+      eprint={2401.03590},
       archivePrefix={arXiv},
       primaryClass={cs.CL}
 }
