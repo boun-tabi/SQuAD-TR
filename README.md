@@ -124,6 +124,12 @@ xquad_tr = load_dataset("xquad", "xquad.tr") # External resource
 ```
 * Demo application 👉 [Google Colab](https://colab.research.google.com/drive/1QVD0c1kFfOUc1sRGKDHWeF_HgNEineRt?usp=sharing). 
 
+
+### 🩺 Visualizations  - 🆕
+
+The visualizations for the dense retrievers in our paper are demonstrated [here](https://github.com/boun-tabi/SQuAD-TR/blob/beta/visualizations.md).
+
+
 ### 🔬 Reproducibility 
 
 You can find all code, models and samples of the input data [here](https://drive.google.com/drive/folders/1Y3q1qvzpOSg3PWO18VQ0arp1hB-xcU1F?usp=sharing) and the instructions to reproduce the experiment results [here](https://docs.google.com/document/d/10oUYq22te0hwRaKEyM1Rkd2V9e1j8o_1GSPmnTOIBGI/edit?usp=sharing).  Please feel free to reach out to us if you have any specific questions. 
