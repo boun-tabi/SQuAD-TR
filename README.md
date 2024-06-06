@@ -127,7 +127,7 @@ xquad_tr = load_dataset("xquad", "xquad.tr") # External resource
 
 ### 🩺 Visualizations  - 🆕
 
-The visualizations for the dense retrievers in our paper are demonstrated [here](https://github.com/boun-tabi/SQuAD-TR/blob/beta/visualizations.md).
+The visualizations for the dense retrievers in our paper are demonstrated [here](https://github.com/boun-tabi/SQuAD-TR/blob/master/visualizations.md).
 
 
 ### 🔬 Reproducibility 
