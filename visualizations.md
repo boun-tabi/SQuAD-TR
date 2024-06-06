@@ -1,6 +1,6 @@
 # Visualizations
 
-In this page, we demonstrate the visualizations for the dense retrievers in our paper.
+In this page, we demonstrate the visualizations for the dense retrievers in our paper. We customized [BertViz](https://github.com/jessevig/bertviz) to obtain visualizations.
 
 ## DPR Visualizations
 
