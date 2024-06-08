@@ -12,6 +12,11 @@ Question | Passage
 
 ## ColBERT-QA Visualizations
 
-In the following table, we show the selected passage token for each question token as a result of the MaxSim operation used in the ColBERT-QA model.
+The following visuals show 2 example matches we mentioned in Table 12 of our paper.  In these examples, the top row includes the passage tokens while the bottom row includes the question tokens.
 
-![](https://github.com/boun-tabi/SQuAD-TR/blob/622e9e722230f505cdf468f9d947375e6491a960/visualizations/ColBERT_QA_Visualization_Question_Passage.gif) 
+
+![](https://github.com/boun-tabi/SQuAD-TR/blob/b2a3f08486ccdf5505861f323ea3ea59bbb392e3/visualizations/colbert-qa-visualization-portrait-1.png) 
+<div align="center">Example 1: etti (make) vs yapan (~does)</div>
+
+![](https://github.com/boun-tabi/SQuAD-TR/blob/b2a3f08486ccdf5505861f323ea3ea59bbb392e3/visualizations/colbert-qa-visualization-portrait-2.png)
+<div align="center">Example 2: ne kadar (how much) vs milyon (million)</div>
